@@ -1,4 +1,5 @@
 import "remixicon/fonts/remixicon.css";
+import LOGO from "../assets/logo-light.svg";
 
 export function Footer() {
   return (
@@ -14,12 +15,7 @@ export function Footer() {
           <div className="lg:row-span-2 flex flex-col justify-between">
 
             <div>
-              <h3
-                className="text-[28px] tracking-[0.2em] mb-4"
-                style={{ fontFamily: "Cormorant Garamond", color: "#EDE3D5" }}
-              >
-                LUNA
-              </h3>
+              <img src={LOGO} alt="logo" className="h-10 w-auto mb-4" />
 
               <p className="text-sm leading-[1.7] max-w-[280px]">
                 Skin, hair & dental care designed around you — guided by a decade
