@@ -1,5 +1,3 @@
-import HERO from "../assets/hero.png";
-
 export function Hero() {
     const badges = [
         {
@@ -49,7 +47,7 @@ export function Hero() {
             {/* Image */}
             <div className="relative w-full rounded-2xl md:rounded-[32px] overflow-hidden h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
                 <img
-                    src={HERO}
+                    src="https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776610067/hero_zwnlzl.png"
                     alt="Clinic interior"
                     className="w-full h-full object-cover"
                 />
