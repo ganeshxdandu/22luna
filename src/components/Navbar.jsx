@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LOGO from "../assets/logo.svg";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,21 +30,7 @@ export function Navbar() {
         >
             {/* Logo */}
             <div className="flex items-center shrink-0">
-                <img
-                    src="https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-b7f90490fbd1bf42.svg"
-                    alt="logo"
-                    className="h-8 md:h-10 w-auto"
-                />
-                <img
-                    src="https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-4c885c1174aef916.svg"
-                    alt="logo"
-                    className="h-8 md:h-10 w-auto"
-                />
-                <img
-                    src="https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-b0d8380e12fdf05f.svg"
-                    alt="logo"
-                    className="h-9 md:h-12 w-auto"
-                />
+                <img src={LOGO} alt="logo" className="h-8 md:h-10 w-auto" />
             </div>
 
             {/* Desktop Nav */}
