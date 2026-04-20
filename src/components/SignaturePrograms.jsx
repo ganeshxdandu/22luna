@@ -23,7 +23,7 @@ export function SignaturePrograms() {
     ];
 
     return (
-        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24">
+        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24 max-w-[1440px] mx-auto">
             {/* HEADER */}
             <div className="flex flex-col items-center text-center gap-3 md:gap-4 mb-14 md:mb-16">
                 <h2

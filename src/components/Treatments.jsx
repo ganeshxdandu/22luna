@@ -19,7 +19,7 @@ export function Treatments() {
     const treatments = data[active];
 
     return (
-        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24">
+        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24 max-w-[1440px] mx-auto">
             {/* HEADER */}
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 md:mb-16">
                 <div>

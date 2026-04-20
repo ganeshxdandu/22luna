@@ -103,7 +103,7 @@ export function Testimonials() {
     };
 
     return (
-        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24">
+        <section className="w-full bg-[#F5EFE6] px-5 md:px-10 lg:px-[84px] py-20 md:py-24 max-w-[1440px] mx-auto">
             {/* HEADER */}
             <div className="flex items-end justify-between mb-8 md:mb-10">
                 <div>
