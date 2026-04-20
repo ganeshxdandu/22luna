@@ -56,7 +56,7 @@ export function CtaBanner() {
           <div className="flex flex-col gap-3 mt-6 max-w-[320px]">
 
             <button
-              onClick={() => window.open("tel:+919876543210")}
+              onClick={() => window.open("tel:+918971725522")}
               className="flex items-center gap-4 px-5 py-3 rounded-[14px] border border-white/10 bg-white/5 hover:bg-white/10 transition"
             >
               <i className="ri-phone-line text-[#C9A882]" />
@@ -70,7 +70,7 @@ export function CtaBanner() {
             <button
               onClick={() =>
                 window.open(
-                  "https://wa.me/919876543210?text=Hi, I'd like to book a consultation"
+                  "https://wa.me/918971725522?text=Hi, I'd like to book a consultation"
                 )
               }
               className="flex items-center gap-4 px-5 py-3 rounded-[14px] border border-green-500/20 bg-green-500/10 hover:bg-green-500/20 transition"
