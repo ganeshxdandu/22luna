@@ -1,114 +1,21 @@
 import { useState } from "react";
 import "remixicon/fonts/remixicon.css";
-import { TREATMENTS } from "../utils/utils";
+import { TREATMENTS, TREATMENTS_DATA } from "../utils/utils";
 
-const {LASER, CHEMICAL, FILLERS, PRP, BOTOX, TIGHTENING, NOISE} = TREATMENTS;
+const { NOISE } = TREATMENTS;
+const { Skin, Hair, Men, Dental } = TREATMENTS_DATA;
 
+const data = {
+    Skin,
+    Hair,
+    Men,
+    Dental,
+};
 
 export function Treatments() {
     const [active, setActive] = useState("Skin");
 
     const tabs = ["Skin", "Hair", "Men", "Dental"];
-
-    const data = {
-        Skin: [
-            {
-                label: "Laser Hair Reduction",
-                image: LASER,
-                large: true,
-            },
-            {
-                label: "Chemical Peels",
-                image: CHEMICAL,
-            },
-            { label: "Dermal Fillers", image: FILLERS },
-            { label: "PRP Therapy", image: PRP },
-            { label: "Botox", image: BOTOX },
-            { label: "Skin Tightening", image: TIGHTENING },
-        ],
-        Hair: [
-            {
-                label: "Hair Transplant",
-                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
-                large: true,
-            },
-            {
-                label: "PRP Hair Therapy",
-                image: "https://images.unsplash.com/photo-1594824475317-6f9c7e8b6c06",
-            },
-            {
-                label: "Scalp Detox",
-                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03",
-            },
-            {
-                label: "Anti Dandruff",
-                image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
-            },
-            {
-                label: "Hair Growth Boost",
-                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
-            },
-            {
-                label: "Keratin Treatment",
-                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03",
-            },
-        ],
-        Men: [
-            {
-                label: "Beard Enhancement",
-                image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
-                large: true,
-            },
-            {
-                label: "Acne Control",
-                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03",
-            },
-            {
-                label: "Hairline Fix",
-                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
-            },
-            {
-                label: "Skin Brightening",
-                image: "https://images.unsplash.com/photo-1594824475317-6f9c7e8b6c06",
-            },
-            {
-                label: "Anti Aging",
-                image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
-            },
-            {
-                label: "Body Grooming",
-                image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
-            },
-        ],
-        Dental: [
-            {
-                label: "Teeth Whitening",
-                image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5",
-                large: true,
-            },
-            {
-                label: "Smile Design",
-                image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db",
-            },
-            {
-                label: "Braces",
-                image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5",
-            },
-            {
-                label: "Root Canal",
-                image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db",
-            },
-            {
-                label: "Dental Implants",
-                image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5",
-            },
-            {
-                label: "Cleaning",
-                image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db",
-            },
-        ],
-    };
-
     const treatments = data[active];
 
     return (
