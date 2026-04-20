@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "remixicon/fonts/remixicon.css";
 import LOGO from "../assets/logo.svg";
+import { motion } from "framer-motion";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -48,16 +49,15 @@ export function Navbar() {
                 </div>
 
                 {/* CTA */}
-                <button
-                    className="hidden md:flex items-center px-4 py-[6px] rounded-full text-[13px] tracking-[0.03em]"
-                    style={{
-                        border: "1px solid rgba(0,0,0,0.1)",
-                        background: "rgba(255,255,255,0.4)",
-                        color: "#3E2F21",
-                    }}
+                <motion.button
+                    whileHover={{ scale: 1.04 }}
+                    className="hidden md:flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm text-white bg-gradient-to-r from-[#2C2118] to-[#533E2D]"
                 >
-                    Book Consultation
-                </button>
+                    <span>Book Consultation</span>
+                    <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10">
+                        <i className="ri-arrow-right-up-line" />
+                    </span>
+                </motion.button>
 
                 {/* MOBILE MENU ICON */}
                 <button
@@ -91,16 +91,15 @@ export function Navbar() {
                         </a>
                     ))}
 
-                    <button
-                        className="mt-2 px-5 py-2 rounded-full text-[13px]"
-                        style={{
-                            border: "1px solid rgba(0,0,0,0.1)",
-                            background: "rgba(255,255,255,0.5)",
-                            color: "#3E2F21",
-                        }}
+                    <motion.button
+                        whileHover={{ scale: 1.04 }}
+                        className="mt-2 flex items-center gap-2 px-5 pr-2 py-2 rounded-full text-[13px] text-white bg-gradient-to-r from-[#2C2118] to-[#533E2D]"
                     >
-                        Book Consultation
-                    </button>
+                        <span>Book Consultation</span>
+                        <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10">
+                            <i className="ri-arrow-right-up-line" />
+                        </span>
+                    </motion.button>
                 </div>
             </div>
         </nav>

@@ -1,16 +1,18 @@
+import { motion } from "framer-motion";
+import "remixicon/fonts/remixicon.css";
 
 export function Hero() {
     const badges = [
         {
-            icon: "https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-60a6c7935ef47662.svg",
+            icon: "ri-award-line",
             label: "10+ Years Experience",
         },
         {
-            icon: "https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-d8132695886c9871.svg",
+            icon: "ri-user-heart-line",
             label: "Personalized Care",
         },
         {
-            icon: "https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-7219cd2592b57e50.svg",
+            icon: "ri-stethoscope-line",
             label: "Advanced Treatments",
         },
     ];
@@ -24,9 +26,7 @@ export function Hero() {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10">
                 <h1
                     className="text-[36px] sm:text-[44px] text-[#2C2118] md:text-[56px] lg:text-[58px] font-bold leading-[1] tracking-[-0.04em] max-w-full lg:max-w-[500px]"
-                    style={{
-                        fontFamily: "Cormorant Garamond",
-                    }}
+                    style={{ fontFamily: "Cormorant Garamond" }}
                 >
                     You Don't Have To Figure It Out Alone.
                 </h1>
@@ -53,6 +53,7 @@ export function Hero() {
 
                 {/* Bottom Content */}
                 <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                    
                     {/* Badges */}
                     <div className="flex flex-wrap gap-2 sm:gap-3">
                         {badges.map((b) => (
@@ -65,33 +66,23 @@ export function Hero() {
                                     fontFamily: "DM Sans",
                                 }}
                             >
-                                <img
-                                    src={b.icon}
-                                    alt=""
-                                    className="w-4 h-4 sm:w-5 sm:h-5"
-                                />
+                                <i className={`${b.icon} w-4 h-4 sm:w-5 sm:h-5`} />
                                 {b.label}
                             </span>
                         ))}
                     </div>
 
                     {/* CTA */}
-                    <button
-                        className="self-start sm:self-auto flex items-center gap-2 pl-4 pr-2 py-2 rounded-full text-white text-sm"
-                        style={{
-                            background:
-                                "linear-gradient(90deg, #2C2118 0%, #533E2D 100%)",
-                        }}
+                    <motion.button
+                        whileHover={{ scale: 1.04 }}
+                        className="mt-4 self-start sm:self-auto flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm text-white bg-gradient-to-r from-[#2C2118] to-[#533E2D]"
                     >
                         <span>Book Consultation</span>
-                        <span className="w-7 h-7 rounded-full flex items-center justify-center bg-white/10">
-                            <img
-                                src="https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-8307d901c520a868.svg"
-                                alt=""
-                                className="w-[10px] h-[10px]"
-                            />
+                        <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10">
+                            <i className="ri-arrow-right-up-line" />
                         </span>
-                    </button>
+                    </motion.button>
+
                 </div>
             </div>
         </section>
