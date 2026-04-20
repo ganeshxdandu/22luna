@@ -1,3 +1,4 @@
+
 export function Hero() {
     const badges = [
         {
@@ -22,14 +23,9 @@ export function Hero() {
             {/* Headline */}
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10">
                 <h1
-                    className="text-[36px] sm:text-[44px] md:text-[56px] lg:text-[58px] font-bold leading-[1] tracking-[-0.04em] max-w-full lg:max-w-[500px]"
+                    className="text-[36px] sm:text-[44px] text-[#2C2118] md:text-[56px] lg:text-[58px] font-bold leading-[1] tracking-[-0.04em] max-w-full lg:max-w-[500px]"
                     style={{
                         fontFamily: "Cormorant Garamond",
-                        background:
-                            "linear-gradient(90deg, #2C2118 0%, #533E2D 63%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        color: "transparent",
                     }}
                 >
                     You Don't Have To Figure It Out Alone.

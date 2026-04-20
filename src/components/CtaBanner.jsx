@@ -197,7 +197,7 @@ export function CtaBanner() {
       </div>
 
       {/* INPUT STYLES */}
-      <style jsx>{`
+      <style>{`
         .input {
           width: 100%;
           background: rgba(255, 255, 255, 0.05);
