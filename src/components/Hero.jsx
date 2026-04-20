@@ -156,7 +156,7 @@ export function Hero() {
 
                 {/* CONTENT */}
                 <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 flex flex-col gap-3">
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-end justify-between gap-3">
                         <div className="flex flex-wrap gap-2 max-w-[65%]">
                             {[
                                 {
