@@ -52,11 +52,11 @@ export function SignaturePrograms() {
             <div className="flex flex-col gap-6 md:gap-8">
                 {/* HERO CARD */}
                 <div className="relative w-full rounded-[24px] md:rounded-[32px] overflow-hidden group">
-                    <div className="h-[260px] sm:h-[340px] md:h-[420px] lg:h-[500px]">
+                    <div className="h-[400px] sm:h-[340px] md:h-[420px] lg:h-[400px]">
                         <img
                             src={BRIDAL}
                             alt=""
-                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            className="w-full h-full object-cover object-right-top transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                     </div>
 
