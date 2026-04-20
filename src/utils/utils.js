@@ -155,3 +155,12 @@ export const TREATMENTS_DATA = {
         },
     ],
 };
+
+export const HERO_IMAGES =  [
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776610067/hero_zwnlzl.png",
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776657014/9d231f71-9b9f-4934-9cf3-13798f42b423.png",
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776656868/860b59cc-63a7-42c3-80a5-3ac5f9fac9ef.png",
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776656741/96f6d8ba-dbbf-49e9-9e8b-e6188f0c3321.png",
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776656819/107e0d44-3c25-4511-8fd7-eb4785159ea9.png",
+        "https://res.cloudinary.com/doycsx0hd/image/upload/q_auto/f_auto/v1776656631/53f263c8-ad42-4466-915d-b8f1144bb1b0.png",
+];
