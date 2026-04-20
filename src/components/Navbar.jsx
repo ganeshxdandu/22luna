@@ -1,114 +1,103 @@
 import { useState, useEffect } from "react";
+import "remixicon/fonts/remixicon.css";
 import LOGO from "../assets/logo.svg";
 
 export function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    // Detect scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <nav
-            className={`w-full flex items-center justify-between px-5 md:px-10 lg:px-[84px] py-3 fixed top-0 left-0 z-50 transition-all duration-300 ${
-                isScrolled ? "shadow-md" : ""
-            }`}
+  return (
+    <nav
+      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-5 md:px-10 lg:px-[84px] py-3 transition-all duration-300"
+      style={{
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        background: isScrolled
+          ? "rgba(245, 239, 230, 0.75)"
+          : "rgba(245, 239, 230, 0.45)",
+        borderBottom: "0.5px solid rgba(0,0,0,0.06)",
+      }}
+    >
+      {/* LOGO */}
+      <img src={LOGO} alt="logo" className="h-8 md:h-9 w-auto" />
+
+      {/* DESKTOP NAV */}
+      <div className="hidden md:flex items-center gap-7">
+        {["Home", "Programs", "Treatments", "About"].map((link) => (
+          <a
+            key={link}
+            href="#"
+            className="text-[#6B6259] text-[15px] tracking-[0.02em] hover:text-[#3E2F21] transition"
+            style={{ fontFamily: "DM Sans" }}
+          >
+            {link}
+          </a>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <button
+        className="hidden md:flex items-center gap-2 px-4 py-[6px] rounded-full text-[13px] tracking-[0.03em]"
+        style={{
+          border: "1px solid rgba(0,0,0,0.1)",
+          color: "#3E2F21",
+          background: "rgba(255,255,255,0.4)",
+        }}
+      >
+        Book Consultation
+      </button>
+
+      {/* MOBILE ICON */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden text-[#3E2F21] text-[22px]"
+      >
+        <i className={isOpen ? "ri-close-line" : "ri-menu-line"} />
+      </button>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`absolute top-full left-0 w-full transition-all duration-300 overflow-hidden md:hidden ${
+          isOpen ? "max-h-[360px] py-6" : "max-h-0"
+        }`}
+        style={{
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          background: "rgba(245, 239, 230, 0.9)",
+          borderBottom: "0.5px solid rgba(0,0,0,0.06)",
+        }}
+      >
+        <div className="flex flex-col items-center gap-5">
+          {["Home", "Programs", "Treatments", "About"].map((link) => (
+            <a
+              key={link}
+              href="#"
+              className="text-[#6B6259] text-[16px] tracking-[0.02em] hover:text-[#3E2F21]"
+            >
+              {link}
+            </a>
+          ))}
+
+          <button
+            className="mt-2 px-5 py-2 rounded-full text-[13px]"
             style={{
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                background: isScrolled
-                    ? "rgba(245, 239, 230, 0.7)"
-                    : "rgba(245, 239, 230, 0.4)",
-                borderBottom: "0.5px solid rgba(237, 227, 213, 0.5)",
+              border: "1px solid rgba(0,0,0,0.1)",
+              background: "rgba(255,255,255,0.5)",
+              color: "#3E2F21",
             }}
-        >
-            {/* Logo */}
-            <div className="flex items-center shrink-0">
-                <img src={LOGO} alt="logo" className="h-8 md:h-10 w-auto" />
-            </div>
-
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-7">
-                {["Home", "Programs", "Treatments", "About"].map((link) => (
-                    <a
-                        key={link}
-                        href="#"
-                        className="text-[#6F655D] text-sm lg:text-base hover:text-[#4B341B] transition-colors"
-                        style={{ fontFamily: "DM Sans" }}
-                    >
-                        {link}
-                    </a>
-                ))}
-            </div>
-
-            {/* CTA */}
-            <button
-                className="hidden md:flex items-center gap-2 pl-3 pr-[6px] py-[6px] rounded-full text-white text-sm"
-                style={{
-                    background:
-                        "linear-gradient(90deg, #2C2118 0%, #533E2D 100%)",
-                }}
-            >
-                <span>Book Consultation</span>
-                <span className="w-[28px] h-[28px] rounded-full flex items-center justify-center bg-white/10">
-                    <img
-                        src="https://cdn.codia.ai/figma/dcGShZn6xqh4jywqqIP3I4/img-d67b904b3a608583.svg"
-                        alt="arrow"
-                        className="w-[10px] h-[10px]"
-                    />
-                </span>
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden flex flex-col gap-[5px]"
-            >
-                <span className="w-6 h-[2px] bg-[#4B341B]" />
-                <span className="w-6 h-[2px] bg-[#4B341B]" />
-                <span className="w-6 h-[2px] bg-[#4B341B]" />
-            </button>
-
-            {/* Mobile Menu */}
-            <div
-                className={`absolute top-full left-0 w-full transition-all duration-300 overflow-hidden md:hidden ${
-                    isOpen ? "max-h-[400px] py-6" : "max-h-0"
-                }`}
-                style={{
-                    backdropFilter: "blur(14px)",
-                    WebkitBackdropFilter: "blur(14px)",
-                    background: "rgba(245, 239, 230, 0.85)",
-                    borderBottom: "0.5px solid rgba(237, 227, 213, 0.5)",
-                }}
-            >
-                <div className="flex flex-col items-center gap-6">
-                    {["Home", "Programs", "Treatments", "About"].map((link) => (
-                        <a
-                            key={link}
-                            href="#"
-                            className="text-[#6F655D] text-base hover:text-[#4B341B]"
-                        >
-                            {link}
-                        </a>
-                    ))}
-
-                    <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm"
-                        style={{
-                            background:
-                                "linear-gradient(90deg, #2C2118 0%, #533E2D 100%)",
-                        }}
-                    >
-                        Book Consultation
-                    </button>
-                </div>
-            </div>
-        </nav>
-    );
+          >
+            Book Consultation
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 }
